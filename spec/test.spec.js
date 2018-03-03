@@ -9,12 +9,12 @@ describe('calculate addition', function() {
 		console.log('Two numbers were added successfully!');
 	});
 
-	it('two numbers added together should be equal to five', function () {
+	it('shoudld add two numbers together and be equal to five', function () {
 		console.log('The total was five!');
 	});
 
 	describe('calculate numbers using addition and subtraction', function () {
-		it('A total should be derived from adding two numbers and subtracting another', function () {
+		it('should come to a total derived from adding two numbers and subtracting another', function () {
 			console.log('Two numbers were added and a single number was subtracted from another.');
 		});
 	});
