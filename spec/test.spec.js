@@ -1,21 +1,40 @@
-//	File must end in .spec.js and saved in the spec folder
-//	Describe block is used to contain multilple tests that naturally belong together 
-//	The actual parameters of the test are written in the it block 
-// 	Should contain string describing what the objective of the test is 
-// 	A describe block can exist within another describe block 
+//	1. File must end in .spec.js and saved in the spec folder
+//	2. Describe block is used to contain multilple tests that naturally belong together 
+//	3. The actual parameters of the test are written in the it block 
+// 	4. Should contain string describing what the objective of the test is 
+// 	5. A describe block can exist within another describe block 
+// 	6. Always use pre-built function expect to validate test outcomes 
+
+class Calculator {
+
+	add (a, b) {
+		return a + b;
+	}
+
+	subtract (a, b) {
+		return a - b;
+	}
+
+	sum(a, b, c) {
+		return a + b - c; 
+	}
+}
 
 describe('calculate addition', function() {
+
+	var calc = new Calculator();
+
 	it('should be able to add two numbers together', function() {
-		console.log('Two numbers were added successfully!');
+		expect(calc.add(2, 4)).toBe(6);
 	});
 
-	it('shoudld add two numbers together and be equal to five', function () {
-		console.log('The total was five!');
+	it('should subtract two numbers', function () {
+		expect(calc.subtract(1, 4)).toBe(-3);
 	});
 
-	describe('calculate numbers using addition and subtraction', function () {
-		it('should come to a total derived from adding two numbers and subtracting another', function () {
-			console.log('Two numbers were added and a single number was subtracted from another.');
-		});
+	it('should arrive at a total through adding two numbers and subtracting one', function() {
+		expect(calc.sum(4, 6, 3)).toBe(7);
 	});
 });
+
+
